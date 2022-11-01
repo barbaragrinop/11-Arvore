@@ -79,7 +79,7 @@ void menu()
 void inicializar()
 {
 
-	// provisório porque não libera a memoria usada pela arvore
+	// provisï¿½rio porque nï¿½o libera a memoria usada pela arvore
 	NO* raiz = NULL;
 
 	cout << "Arvore inicializada \n";
@@ -177,8 +177,18 @@ void exibirElementosArvore(NO* no)
 
 void buscarElementoArvore(NO* no, int valor)
 {
-	
+	if(no == NULL){
+		cout << "Valor nao encontrado!";
+		return;
+	}
 
+	if(valor == no->valor){
+		cout << "Elemento encontrado!";
+	} else if(valor < no->valor){
+		buscarElementoArvore(no->esq, valor)
+	} else {
+		buscarElementoArvore(no->dir, valor)
+	}
 }
 
 
